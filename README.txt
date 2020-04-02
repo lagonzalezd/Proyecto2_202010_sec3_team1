@@ -1,2 +1,4 @@
-Juan Felipe Castaño Lozano. (201820865).
-Sergio Guillen. (201912757).
+Luis Alejandro Gonzalez Diaz
+201622497
+Geisson Ponce Solano
+201913908

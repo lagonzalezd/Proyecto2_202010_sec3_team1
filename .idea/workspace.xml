@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5d92bd22-4991-49ec-ae32-139cc0e31a9b" name="Default Changelist" comment="" />
+    <list default="true" id="5d92bd22-4991-49ec-ae32-139cc0e31a9b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/data_structures/HashTLinearProbing.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/data_structures/HashTableSeparateChaining.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/data_structures/LinkedListImp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/data_structures/Node.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/data_structures/PriorityQueue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/data_structures/Queue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/data_structures/SequentialSearchST.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/logic/Modelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/logic/Modelo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/logic/Multa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/logic/Comparendo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/data_structures/TestLinkedListImp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/data_structures/TestNode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/logic/TestModelo.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,6 +49,14 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="0" y="34" width="1910" height="1046" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1585793395915">
+      <screen x="0" y="34" width="1920" height="1046" />
+    </state>
+    <state x="0" y="34" width="1910" height="1046" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.34.1920.1046@0.34.1920.1046" timestamp="1585793395915" />
+    <state x="627" y="246" width="655" height="619" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585793372260">
+      <screen x="0" y="34" width="1920" height="1046" />
+    </state>
+    <state x="627" y="246" width="655" height="619" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.34.1920.1046@0.34.1920.1046" timestamp="1585793372260" />
     <state x="540" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1585792511637">
       <screen x="0" y="34" width="1920" height="1046" />
     </state>

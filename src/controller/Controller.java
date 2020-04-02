@@ -1,9 +1,6 @@
 package controller;
 
-import model.data_structures.HashTLinearProbing;
-import model.data_structures.HashTableSeparateChaining;
-import model.data_structures.LinkedListImp;
-import model.logic.Multa;
+import model.logic.Comparendo;
 import model.logic.Modelo;
 import view.View;
 
@@ -25,7 +22,7 @@ public class Controller {
 	
 	private Comparable[] copia_ComparendosOriginal;
 
-	private Multa m;
+	private Comparendo m;
 
 	private HashTLinearProbing<String, String> copiaLinearProb;
 

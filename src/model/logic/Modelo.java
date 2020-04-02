@@ -5,9 +5,6 @@ import java.io.FileReader;
 
 import com.google.gson.internal.$Gson$Preconditions;
 import com.google.gson.stream.JsonReader;
-import model.data_structures.HashTLinearProbing;
-import model.data_structures.HashTableSeparateChaining;
-import model.data_structures.LinkedListImp;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
@@ -20,20 +17,14 @@ import java.util.List;
  *
  */
 public class Modelo {
-	LinkedListImp<Multa> lista;
-	HashTLinearProbing<String, String> hashTL;
-	HashTableSeparateChaining<String, String> hashTSC;
-	private Multa[] multasArr;
+	private Comparendo[] multasArr;
 	private static Comparable[] aux;
 
 	public Modelo() {
-		lista = new LinkedListImp<>();
-		hashTL = new HashTLinearProbing<>();
-		hashTSC = new HashTableSeparateChaining<>();
 	}
 
 
-	public LinkedListImp<Multa> ModeloJSON() throws FileNotFoundException {
+	public LinkedListImp<Comparendo> ModeloJSON() throws FileNotFoundException {
 
 //		String path = "./data/comparendos_dei_2018_small.geojson";
 		//	String path = "./data/comparendos_dei_2018.geojson";
@@ -67,7 +58,7 @@ public class Modelo {
 					}
 				}
 
-				Multa m = new Multa(clase, tipo, infrac, descr, localidad, fechaHora, geo, id, medioDet);
+				Comparendo m = new Comparendo(clase, tipo, infrac, descr, localidad, fechaHora, geo, id, medioDet);
 
 				lista.insertarAlFinal(m);
 			}
@@ -110,7 +101,7 @@ public class Modelo {
 					}
 				}
 
-				Multa m = new Multa(clase, tipo, infrac, descr, localidad, fechaHora, geo, id, medioDet);
+				Comparendo m = new Comparendo(clase, tipo, infrac, descr, localidad, fechaHora, geo, id, medioDet);
 
 				String llave = m.darFechaHora() + m.darClase() + m.darInfraccion();
 				valores = m.darId() + "\t" + m.darFechaHora() + "\t" + m.darClase() + "\t" + m.darTipoServicio() + "\t" + m.darInfraccion() + "\t" + m.darDescInfr() + "\t" + m.darLocalidad() + "\t" + m.darMedioDeteccion();
@@ -159,7 +150,7 @@ public class Modelo {
 					}
 				}
 
-				Multa m = new Multa(clase, tipo, infrac, descr, localidad, fechaHora, geo, id, medioDet);
+				Comparendo m = new Comparendo(clase, tipo, infrac, descr, localidad, fechaHora, geo, id, medioDet);
 
 				String llave = m.darFechaHora() + m.darClase() + m.darInfraccion();
 				valores = m.darId() + "\t" + m.darFechaHora() + "\t" + m.darClase() + "\t" + m.darTipoServicio() + "\t" + m.darInfraccion() + "\t" + m.darDescInfr() + "\t" + m.darLocalidad() + "\t" + m.darMedioDeteccion();
@@ -175,11 +166,11 @@ public class Modelo {
 	}
 
 
-	public Comparable<Multa>[] copiarComparendos() {
-		multasArr = new Multa[lista.size()];
+	public Comparable<Comparendo>[] copiarComparendos() {
+		multasArr = new Comparendo[lista.size()];
 		for (int i = 0; i < lista.size(); i++) {
-			Multa multa = lista.darActual(i).darValor();
-			multasArr[i] = multa;
+			Comparendo comparendo = lista.darActual(i).darValor();
+			multasArr[i] = comparendo;
 
 
 		}
@@ -187,8 +178,8 @@ public class Modelo {
 		return multasArr;
 	}
 
-	public Multa buscar(String id) {
-		for (Multa m : lista) {
+	public Comparendo buscar(String id) {
+		for (Comparendo m : lista) {
 			if (id == null) {
 				return null;
 			} else if (m.darId() == id) {
@@ -296,9 +287,9 @@ public class Modelo {
 	}
 
 
-	public static boolean isSorted(Comparable<Multa>[] datos) {
+	public static boolean isSorted(Comparable<Comparendo>[] datos) {
 		for (int i = 1; i < datos.length; i++)
-			if (datos[i].compareTo((Multa) datos[i - 1]) < 0) {
+			if (datos[i].compareTo((Comparendo) datos[i - 1]) < 0) {
 				return false;
 			}
 		return true;

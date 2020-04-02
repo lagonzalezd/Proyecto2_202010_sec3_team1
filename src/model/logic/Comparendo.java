@@ -2,7 +2,7 @@ package model.logic;
 
 import java.util.List;
 
-public class Multa implements Comparable<Multa>
+public class Comparendo implements Comparable<Comparendo>
 {
 	private String OBJECT_ID;
 	
@@ -22,7 +22,7 @@ public class Multa implements Comparable<Multa>
 
 	private String MEDIO_DETECCION;
 	
-	public Multa(String pClase, String pTipoS, String pInfra, String pDesc, String pLocalidad, String pFechaHora, List<Double> pGeo, String pId, String pMedio)
+	public Comparendo(String pClase, String pTipoS, String pInfra, String pDesc, String pLocalidad, String pFechaHora, List<Double> pGeo, String pId, String pMedio)
 	{
 		CLASE_VEHICULO = pClase;
 		TIPO_SERVICIO = pTipoS;
@@ -74,12 +74,12 @@ public class Multa implements Comparable<Multa>
 	}
 
 	@Override
-	public int compareTo(Multa pMulta)
+	public int compareTo(Comparendo pComparendo)
 	{
-		int hora = Integer.parseInt(pMulta.darFechaHora().replaceAll("/",""));
+		int hora = Integer.parseInt(pComparendo.darFechaHora().replaceAll("/",""));
 		
 		int hora2 = Integer.parseInt(darFechaHora().replaceAll("/", ""));
-		int objId = Integer.parseInt(pMulta.darId());
+		int objId = Integer.parseInt(pComparendo.darId());
 		int objId2 = Integer.parseInt(darId());
 	//	System.out.println(hora);
 

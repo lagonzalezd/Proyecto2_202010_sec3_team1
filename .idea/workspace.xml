@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5d92bd22-4991-49ec-ae32-139cc0e31a9b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/data_structures/HashTLinearProbing.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/data_structures/HashTableSeparateChaining.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/data_structures/LinkedListImp.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/data_structures/Node.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/data_structures/PriorityQueue.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/data_structures/Queue.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/data_structures/SequentialSearchST.java" beforeDir="false" />
+    <list default="true" id="5d92bd22-4991-49ec-ae32-139cc0e31a9b" name="Default Changelist" comment="K">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto2_202010.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto2_202010.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/logic/Comparendo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/logic/Comparendo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/logic/Modelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/logic/Modelo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/logic/Multa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/logic/Comparendo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/data_structures/TestLinkedListImp.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/data_structures/TestNode.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/logic/TestModelo.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1Zr4nhZhyw7krU3ylthAtC1Qpz6" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -34,6 +34,10 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../gson-2.8.6.jar!/" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -53,10 +57,22 @@
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
     <state x="0" y="34" width="1910" height="1046" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.34.1920.1046@0.34.1920.1046" timestamp="1585793395915" />
-    <state x="627" y="246" width="655" height="619" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585793372260">
+    <state x="627" y="246" width="655" height="619" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585794185964">
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
-    <state x="627" y="246" width="655" height="619" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.34.1920.1046@0.34.1920.1046" timestamp="1585793372260" />
+    <state x="627" y="246" width="655" height="619" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.34.1920.1046@0.34.1920.1046" timestamp="1585794185964" />
+    <state x="446" y="84" width="1018" height="943" key="CommitChangelistDialog2" timestamp="1585794334043">
+      <screen x="0" y="34" width="1920" height="1046" />
+    </state>
+    <state x="446" y="84" width="1018" height="943" key="CommitChangelistDialog2/0.34.1920.1046@0.34.1920.1046" timestamp="1585794334043" />
+    <state x="685" y="258" width="530" height="598" key="FileChooserDialogImpl" timestamp="1585794104360">
+      <screen x="0" y="34" width="1920" height="1046" />
+    </state>
+    <state x="685" y="258" width="530" height="598" key="FileChooserDialogImpl/0.34.1920.1046@0.34.1920.1046" timestamp="1585794104360" />
+    <state x="315" y="34" width="1280" height="1046" key="SettingsEditor" timestamp="1585794112041">
+      <screen x="0" y="34" width="1920" height="1046" />
+    </state>
+    <state x="315" y="34" width="1280" height="1046" key="SettingsEditor/0.34.1920.1046@0.34.1920.1046" timestamp="1585794112041" />
     <state x="540" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1585792511637">
       <screen x="0" y="34" width="1920" height="1046" />
     </state>

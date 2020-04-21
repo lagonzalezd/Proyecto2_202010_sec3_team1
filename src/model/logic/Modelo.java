@@ -33,9 +33,6 @@ public class Modelo {
      * Cola de lista encadenada.
      */
 
-    private HashLinearProbing datosCola2;
-
-    private HashSeparateChaining datosCola3;
 
     private ArbolRojoNegro datosArbol;
 

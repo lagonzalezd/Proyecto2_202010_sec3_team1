@@ -21,8 +21,6 @@ public class KeyComp implements Comparable<KeyComp>{
     }
 
 
-
-
     public int hashCode()
     {
         int hash=17;

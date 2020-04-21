@@ -135,10 +135,6 @@ public class ArbolRojoNegro<T extends Comparable<T>, V> {
 		return h;
 	}
 
-	/***************************************************************************
-	 *  Red-black tree deletion.
-	 ***************************************************************************/
-
 	/**
 	 * Removes the smallest key and associated value from the symbol table.
 	 * @throws NoSuchElementException if the symbol table is empty

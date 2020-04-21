@@ -82,19 +82,6 @@ public class Queue<Item> implements Iterable<Item> {
         return item;
     }
 
-    /**
-     * Returns a string representation of this queue.
-     *
-     * @return the sequence of items in FIFO order, separated by spaces
-     */
-    public String toString() {
-        StringBuilder s = new StringBuilder();
-        for (Item item : this) {
-            s.append(item);
-            s.append(' ');
-        }
-        return s.toString();
-    } 
 
     /**
      * Returns an iterator that iterates over the items in this queue in FIFO order.

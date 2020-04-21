@@ -1,109 +1,111 @@
 package model.logic;
 
-import java.util.List;
+import java.util.Date;
 
-import model.data_structures.Key;
+public class Comparendo implements Comparable<Comparendo>{
 
-public class Comparendo implements Comparable<Comparendo> {
-    private String OBJECT_ID;
+	private int objectId;
+	private Date fecha_hora;
+	private String des_infrac;
+	private String medio_dete;
+	private String clase_vehi;
+	private String tipo_servi;
+	private String infraccion;
+	private String localidad;
+	private String municipio;
 
-    private String CLASE_VEHICULO;
+	private double latitud;
+	private double longitud;
 
-    private String TIPO_SERVICIO;
+	public Comparendo(int objeId, Date fecha, String descripcion, String detencion, String claseVeh, String tipoSer, String codInfraccion, String localidadP, String pMunicipio, double lonP, double latP) {
 
-    private String INFRACCION;
-
-    private String DES_INFRAC;
-
-    private String LOCALIDAD;
-
-    private String FECHA_HORA;
-
-    private List<Double> GEO;
-
-    private String MEDIO_DETECCION;
-
-    private Key llave;
-
-    public Comparendo(String pClase, String pTipoS, String pInfra, String pDesc, String pLocalidad, String pFechaHora, List<Double> pGeo, String pId, String pMedio) {
-        CLASE_VEHICULO = pClase;
-        TIPO_SERVICIO = pTipoS;
-        INFRACCION = pInfra;
-        DES_INFRAC = pDesc;
-        LOCALIDAD = pLocalidad;
-        FECHA_HORA = pFechaHora;
-        GEO = pGeo;
-        OBJECT_ID = pId;
-        MEDIO_DETECCION = pMedio;
-    }
-
-    public String darClase() {
-        return CLASE_VEHICULO;
-    }
-
-    public String darTipoServicio() {
-        return TIPO_SERVICIO;
-    }
-
-    public String darInfraccion() {
-        return INFRACCION;
-    }
-
-    public String darDescInfr() {
-        return DES_INFRAC;
-    }
-
-    public String darLocalidad() {
-        return LOCALIDAD;
-    }
-
-    public String darFechaHora() {
-        return FECHA_HORA;
-    }
-
-    public String darMedioDeteccion() {
-        return MEDIO_DETECCION;
-    }
-
-    //ToString() mismo formato de view.
-    public String toString() {
-        return OBJECT_ID + "\t" + FECHA_HORA + "\t" + MEDIO_DETECCION + "\t" + CLASE_VEHICULO + "\t" + TIPO_SERVICIO + "\t" + INFRACCION + "\t" + DES_INFRAC + "\t" + LOCALIDAD + "\t" + GEO;
-
-    }
-
-    public String darId() {
-        return OBJECT_ID;
-    }
-
-    public List<Double> darGeo() {
-        return GEO;
-    }
-
-    public Key getLLave()
-	{
-		return llave;
+		objectId = objeId;
+		fecha_hora = fecha;
+		des_infrac = descripcion;
+		medio_dete = detencion;
+		clase_vehi = claseVeh;
+		tipo_servi = tipoSer;
+		infraccion = codInfraccion;
+		localidad = localidadP;
+		longitud = lonP;
+		latitud = latP;
+		municipio = pMunicipio;
 	}
 
-    @Override
-    public int compareTo(Comparendo pComparendo) {
-        int hora = Integer.parseInt(pComparendo.darFechaHora().replaceAll("/", ""));
+	/**
+	 * @return the objectId
+	 */
+	 public int getObjectId() {
+		return objectId;
+	}
 
-        int hora2 = Integer.parseInt(darFechaHora().replaceAll("/", ""));
-        int objId = Integer.parseInt(pComparendo.darId());
-        int objId2 = Integer.parseInt(darId());
-        //	System.out.println(hora);
+	/**
+	 * @return the fecha_hora
+	 */
+	 public Date getFecha_hora() {
+		 return fecha_hora;
+	 }
 
-        if (hora == hora2)
-            return Integer.compare(objId, objId2);
-        else if (hora > hora2)
-            return -1;
-        else
-            return 1;
+	 /**
+	  * @return the des_infrac
+	  */
+	 public String getDes_infrac() {
+		 return des_infrac;
+	 }
 
+	 /**
+	  * @return the medio_dete
+	  */
+	 public String getMedio_dete() {
+		 return medio_dete;
+	 }
 
-    }
+	 /**
+	  * @return the clase_vehi
+	  */
+	 public String getClase_vehi() {
+		 return clase_vehi;
+	 }
 
-    public Key getLlave() {
-        return llave;
-    }
+	 /**
+	  * @return the tipo_servi
+	  */
+	 public String getTipo_servi() {
+		 return tipo_servi;
+	 }
+
+	 /**
+	  * @return the infraccion
+	  */
+	 public String getInfraccion() {
+		 return infraccion;
+	 }
+
+	 /**
+	  * @return the localidad
+	  */
+	 public String getLocalidad() {
+		 return localidad;
+	 }
+
+	 /**
+	  * @return the fecha_hora
+	  */
+	 public String getmunicipio() {
+		 return municipio;
+	 }
+
+	 /**
+	  * @return the latitud
+	  */
+	 public double getLatitud() {
+		 return latitud;
+	 }
+
+	 /**
+	  * @return the longitud
+	  */
+	 public double getLongitud() {
+		 return longitud;
+	 }
 }

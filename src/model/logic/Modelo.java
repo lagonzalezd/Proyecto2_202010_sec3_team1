@@ -47,8 +47,7 @@ public class Modelo {
     public Modelo()
     {
 
-        datosCola2 = new HashLinearProbing();
-        datosCola3=new HashSeparateChaining();
+
         datosArbol= new ArbolRojoNegro();
     }
 

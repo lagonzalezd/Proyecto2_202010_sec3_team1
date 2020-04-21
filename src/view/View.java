@@ -103,18 +103,6 @@ public class View
 		
 	}
 	
-//	public void displayInfoComparendo(String pInfo){
-//		System.out.println("====== Comparendo Solicitado  ======");
-//		System.out.println("FECHA: "+ pInfo.split("\t")[0]);
-//		System.out.println("CLASE DE VEHICULO: "+ pInfo.split("\t")[1]);
-//		System.out.println("TIPO DE SERVICIO: "+ pInfo.split("\t")[2]);
-//		System.out.println("INFRACCION: "+ pInfo.split("\t")[3]);
-//		System.out.println("DESCRIPCION DE INFRACC.: "+ pInfo.split("\t")[4]);
-//		System.out.println("LOCALIDAD: "+ pInfo.split("\t")[5]);
-//		System.out.println("GEOLOCALIZACION: "+pInfo.split("\t")[6]);
-//		System.out.println("====================================\n");
-//
-//	}
 	public void displayInfoComparendo(String pInfo) {
 		System.out.println("====== Informacion Comparendo Solicitado  ======");
 		System.out.println("ID: "+ pInfo.split("\t")[7]);

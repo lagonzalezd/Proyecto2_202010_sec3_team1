@@ -2,6 +2,8 @@ package model.logic;
 
 import java.util.Date;
 
+import model.data_structures.Key;
+
 public class Comparendo implements Comparable<Comparendo>{
 
 	private int objectId;
@@ -13,6 +15,8 @@ public class Comparendo implements Comparable<Comparendo>{
 	private String infraccion;
 	private String localidad;
 	private String municipio;
+	
+	private Key llave;
 
 	private double latitud;
 	private double longitud;
@@ -29,8 +33,15 @@ public class Comparendo implements Comparable<Comparendo>{
 		longitud = lonP;
 		latitud = latP;
 		municipio = pMunicipio;
+		llave = new Key(objectId);
 	}
 
+	/**
+	 * @return the objectId
+	 */
+	 public Key getllave() {
+		return llave;
+	}
 	/**
 	 * @return the objectId
 	 */

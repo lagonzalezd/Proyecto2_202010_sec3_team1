@@ -18,7 +18,6 @@ public class Comparendo implements Comparable<Comparendo>{
 	private double longitud;
 
 	public Comparendo(int objeId, Date fecha, String descripcion, String detencion, String claseVeh, String tipoSer, String codInfraccion, String localidadP, String pMunicipio, double lonP, double latP) {
-
 		objectId = objeId;
 		fecha_hora = fecha;
 		des_infrac = descripcion;
@@ -108,4 +107,10 @@ public class Comparendo implements Comparable<Comparendo>{
 	 public double getLongitud() {
 		 return longitud;
 	 }
+
+	@Override
+	public int compareTo(Comparendo arg0) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }

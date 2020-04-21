@@ -4,6 +4,7 @@ import java.awt.List;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.InputStreamReader;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -15,102 +16,72 @@ import java.util.Random;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.gson.stream.JsonReader;
 import model.data_structures.*;
 
-/**
- * Definicion del modelo del mundo
- *
- */
 public class Modelo {
-    /**
-     * Atributos del modelo del mundo
-     */
 
-    /**
-     * Cola de lista encadenada.
-     */
+	/**
+	 * Arbol rojo negro.
+	 */
+	private ArbolRojoNegro datosArbol;
+	
 
-    private HashLinearProbing datosCola2;
+	private static Comparable[] aux;
 
-    private HashSeparateChaining datosCola3;
+	/**
+	 * Constructor del modelo del mundo con capacidad predefinida
+	 */
+	public static String PATH = "./data/Comparendos_DEI_2018_Bogot·_D.C_small.geojson";
 
-    private ArbolRojoNegro datosArbol;
+	
+	/**
+	 * Carga el archivo .JSON en una lista enlazada.
+	 * @throws FileNotFoundException. Si no encuentra el archivo.
+	 */
+	public void cargarDatos() {
 
-    private static Comparable[] aux;
+		JsonReader reader;
+		datosArbol = new ArbolRojoNegro<>();
 
-    /**
-     * Constructor del modelo del mundo con capacidad predefinida
-     */
-    public Modelo()
-    {
+		try {
+			reader = new JsonReader(new FileReader(PATH));
+			JsonElement elem = JsonParser.parseReader(reader);
+			JsonArray e2 = elem.getAsJsonObject().get("features").getAsJsonArray();
 
+			SimpleDateFormat parser = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
 
-        datosArbol= new ArbolRojoNegro();
-    }
+			for (JsonElement e : e2) {
+				int OBJECTID = e.getAsJsonObject().get("properties").getAsJsonObject().get("OBJECTID").getAsInt();
 
-    /**
-     * Carga el archivo .JSON en una lista enlazada.
-     * @throws FileNotFoundException. Si no encuentra el archivo.
-     */
+				String s = e.getAsJsonObject().get("properties").getAsJsonObject().get("FECHA_HORA").getAsString();
+				Date FECHA_HORA = parser.parse(s);
 
-    public void cargarCola() throws FileNotFoundException
-    {
-        //Definir mejor la entrada para el lector de json
+				String MEDIO_DETE = e.getAsJsonObject().get("properties").getAsJsonObject().get("MEDIO_DETECCION").getAsString();
+				String CLASE_VEHI = e.getAsJsonObject().get("properties").getAsJsonObject().get("CLASE_VEHICULO").getAsString();
+				String TIPO_SERVI = e.getAsJsonObject().get("properties").getAsJsonObject().get("TIPO_SERVICIO").getAsString();
+				String INFRACCION = e.getAsJsonObject().get("properties").getAsJsonObject().get("INFRACCION").getAsString();
+				String DES_INFRAC = e.getAsJsonObject().get("properties").getAsJsonObject().get("DES_INFRACCION").getAsString();
+				String LOCALIDAD = e.getAsJsonObject().get("properties").getAsJsonObject().get("LOCALIDAD").getAsString();
+				String MUNICIPIO = e.getAsJsonObject().get("properties").getAsJsonObject().get("MUNICIPIO").getAsString();
 
-        long inicio = System.currentTimeMillis();
-        long inicio2 = System.nanoTime();
-        String dir= "./data/Comparendos_DEI_2018_Bogot√°_D.C.geojson";
-        File archivo= new File(dir);
-        JsonReader reader= new JsonReader( new InputStreamReader(new FileInputStream(archivo)));
-        JsonObject gsonObj0= JsonParser.parseReader(reader).getAsJsonObject();
+				double longitud = e.getAsJsonObject().get("geometry").getAsJsonObject().get("coordinates").getAsJsonArray()
+						.get(0).getAsDouble();
 
-        JsonArray comparendos=gsonObj0.get("features").getAsJsonArray();
-        int i=0;
-        while(i<comparendos.size())
-        {
-            JsonElement obj= comparendos.get(i);
-            JsonObject gsonObj= obj.getAsJsonObject();
+				double latitud = e.getAsJsonObject().get("geometry").getAsJsonObject().get("coordinates").getAsJsonArray()
+						.get(1).getAsDouble();
 
-            JsonObject gsonObjpropiedades=gsonObj.get("properties").getAsJsonObject();
-            int objid= gsonObjpropiedades.get("OBJECTID").getAsInt();
-            String fecha= gsonObjpropiedades.get("FECHA_HORA").getAsString();
-            String mediodeteccion = "";
-            String clasevehiculo=gsonObjpropiedades.get("CLASE_VEHICULO").getAsString();
-            String tiposervi=gsonObjpropiedades.get("TIPO_SERVICIO").getAsString();
-            String infraccion=gsonObjpropiedades.get("INFRACCION").getAsString();
-            String desinfraccion=gsonObjpropiedades.get("DES_INFRACCION").getAsString();
-            String localidad=gsonObjpropiedades.get("LOCALIDAD").getAsString();
-            String municipio = "";
+				Comparendo c = new Comparendo(OBJECTID, FECHA_HORA, DES_INFRAC, MEDIO_DETE, CLASE_VEHI, TIPO_SERVI, INFRACCION, LOCALIDAD, MUNICIPIO, longitud, latitud);
+				
+				datosArbol.put(OBJECTID, c);
+			}
 
-            JsonObject gsonObjgeometria=gsonObj.get("geometry").getAsJsonObject();
+		}
+		catch (Exception e){
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+		}
 
-            JsonArray gsonArrcoordenadas= gsonObjgeometria.get("coordinates").getAsJsonArray();
-            double longitud= gsonArrcoordenadas.get(0).getAsDouble();
-            double latitud= gsonArrcoordenadas.get(1).getAsDouble();
-
-            Comparendo agregar=new Comparendo(objid, fecha,mediodeteccion,clasevehiculo, tiposervi, infraccion, desinfraccion, localidad, municipio ,longitud,latitud);
-            datosArbol.put((Comparable) agregar.getLlave(), agregar);
-            i++;
-        }
-        long fin2 = System.nanoTime();
-        long fin = System.currentTimeMillis();
-
-        System.out.println((fin2-inicio2)/1.0e9 +" segundos, de la carga de datos normal.");
-
-        System.out.println("Numero de Comparendos: "+datosArbol.size());
-        System.out.println("El comparendo con mayor ObejctID es: "+datosArbol.max(datosArbol.getRoot()).darv().toString());
-
-    }
-
-
-
-
-
-
-
-
-
+	}
 }

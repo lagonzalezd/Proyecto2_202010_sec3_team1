@@ -2,6 +2,8 @@ package model.logic;
 
 import java.util.List;
 
+import model.data_structures.Key;
+
 public class Comparendo implements Comparable<Comparendo> {
     private String OBJECT_ID;
 

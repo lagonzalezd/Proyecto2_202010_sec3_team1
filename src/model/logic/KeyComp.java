@@ -6,14 +6,13 @@ import java.util.Date;
 
 public class KeyComp implements Comparable<KeyComp>{
 
-    private int id;
-    private Date fecha;
-    private String clasevehiculo;
-    private String infraccion;
+    private int objectId;
+    private Comparendo comp;
 
 
-    public KeyComp(int i,Date f,String cv,String in)
+    public KeyComp(int pObjectId, Comparendo pComp)
     {
+<<<<<<< HEAD
         id=i;
         fecha=f;
         clasevehiculo=cv;
@@ -28,54 +27,29 @@ public class KeyComp implements Comparable<KeyComp>{
         hash=(31*hash)+clasevehiculo.hashCode();
         hash=(31*hash)+infraccion.hashCode();
         return hash;
+=======
+
+        objectId = pObjectId;
+        comp = pComp;
+>>>>>>> ffd221e786c26bf32aec35aadc16022909e9c5ac
 
     }
 
 
     public int compareTo(KeyComp o) {
-        int retorno=0;
+        int salida =0;
 
-        if(id>o.getId())
+        if(objectId>o.getId())
         {
-            retorno=1;
+            salida =1;
         }
-        else if(id<o.getId())
+        else if(objectId<o.getId())
         {
-            retorno=-1;
+            salida = -1;
         }
-        return retorno;
+        return salida ;
     }
 
-    public Date getFecha() {
-        return fecha;
-    }
 
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
-    }
-
-    public String getClasevehiculo() {
-        return clasevehiculo;
-    }
-
-    public void setClasevehiculo(String clasevehiculo) {
-        this.clasevehiculo = clasevehiculo;
-    }
-
-    public String getInfraccion() {
-        return infraccion;
-    }
-
-    public void setInfraccion(String infraccion) {
-        this.infraccion = infraccion;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
 }

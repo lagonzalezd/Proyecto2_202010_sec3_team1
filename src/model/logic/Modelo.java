@@ -3,12 +3,15 @@ package model.logic;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
+import java.util.Iterator;
 
 import com.google.gson.Gson;
 
 import controller.Controller;
 import model.data_structures.ArbolRojoNegro;
 import model.data_structures.Comparendo;
+import model.data_structures.MaxCola;
+import model.data_structures.llaveC;
 import view.View;
 
 
@@ -32,6 +35,8 @@ public class Modelo {
 	@SuppressWarnings("rawtypes")
 	private static ArbolRojoNegro arbol;
 
+	private static MaxCola colaPQ;
+
 	public Modelo(){
 		tiempoCarga=0;
 		tiempoInicio=0;
@@ -46,7 +51,8 @@ public class Modelo {
 
 		arbol = new ArbolRojoNegro();
 
-		try {
+		try 
+		{
 			FileInputStream inputStream;
 			inputStream = new FileInputStream(PATH);
 			InputStreamReader inputStreamreader = new InputStreamReader(inputStream);
@@ -62,12 +68,11 @@ public class Modelo {
 						cargar.features[i].properties.TIPO_SERVICIO,cargar.features[i].properties.INFRACCION, 
 						cargar.features[i].properties.DES_INFRACCION,cargar.features[i].properties.LOCALIDAD, 
 						cargar.features[i].properties.MUNICIPIO,cargar.features[i].geometry.coordinates[0], 
-						cargar.features[i].geometry.coordinates[1]);
+						cargar.features[i].geometry.coordinates[1],"OBJECTID");
 
 				arbol.put(comp.darLlave(), comp);
 
 			}
-
 
 			tiempoFin = System.currentTimeMillis();
 			tiempoCarga = (tiempoFin-tiempoInicio)/1000;
@@ -81,16 +86,20 @@ public class Modelo {
 
 	}
 
+	public void auxiliarReq1B(){
+
+	}
+
+
 	@SuppressWarnings("unchecked")
 	public static void requerimientosCargar(){
 		Comparendo maximo = (Comparendo) arbol.get(arbol.max());
 		view.mensajeDeCarga(arbol.size() +"", maximo.toString());
 	}
 
-	//****************************************** PARTE A *************************************************
+	//****************************************** PARTE A - Alejando G *************************************************
 
 	public void requerimiento1A(){
-
 	}
 
 
@@ -104,19 +113,77 @@ public class Modelo {
 	}
 
 
+	//****************************************** PARTE B - Geisson P *************************************************
 
-	//****************************************** PARTE B *************************************************
+	public void requerimiento1B(int numeroComparendos){
+		colaPQ = new MaxCola(N);
+		Iterator it = arbol.keys(arbol.min(), arbol.max()).iterator();
 
-	public void requerimiento1B(){
+		while(it.hasNext()){
+			llaveC k = (llaveC) it.next();
+			Comparendo actual = (Comparendo) arbol.get(k);
+			actual.cambiarIndicador("DISTANCIA");
+			colaPQ.insert(actual);
+		}
+
+		for (int i = 0; i<numeroComparendos; i++){
+			view.imprimirComparendoReq1((Comparendo) colaPQ.delMax());
+		}
+	}
+
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	public void requerimiento2B( String input){
+		colaPQ = new MaxCola(N);
 		
+		String cadena[] = input.split(",");
+		String medio = cadena[0].replace(" ", "");
+		String clase = cadena[1].replace(" ", "");;
+		String tipoS = cadena[2].replace(" ", "");;
+		String localidad = cadena[3].replace(" ", "");;
+		
+		Iterator it = arbol.keys(arbol.min(), arbol.max()).iterator();
+
+		while(it.hasNext()){
+			llaveC k = (llaveC) it.next();
+			Comparendo actual = (Comparendo) arbol.get(k);
+			if(actual.MEDIO_DETECCION.equalsIgnoreCase(medio) && 
+					actual.CLASE_VEHICULO.equalsIgnoreCase(clase) &&
+					actual.TIPO_SERVICIO.equalsIgnoreCase(tipoS) &&
+					actual.LOCALIDAD.equalsIgnoreCase(localidad))
+			{
+				actual.cambiarIndicador("FECHA");
+				colaPQ.insert(actual);
+			}
+		}
+		
+		for (int i = 0; i<colaPQ.size(); i++){
+			view.imprimirComparendoReq1((Comparendo) colaPQ.delMax());
+		}
 	}
 
-	public void requerimiento2B(){
-
-	}
-
-	public void requerimiento3B(){
-
+	public void requerimiento3B(String cadena){
+		colaPQ = new MaxCola(N);
+		Iterator it = arbol.keys(arbol.min(), arbol.max()).iterator();
+		
+		String division1[] = cadena.split(";");
+		
+		String division2[] = division1[0].split(",");
+		double li = Double.parseDouble(division2[0].replace(" ", ""));
+		double ls = Double.parseDouble(division2[1].replace(" ", ""));
+		
+		String clase = division1[1].replace(" ", "");
+		
+		while(it.hasNext()){
+			llaveC k = (llaveC) it.next();
+			Comparendo actual = (Comparendo) arbol.get(k);
+			boolean enIntervalo = actual.latitud >= li && actual.latitud <= ls;
+			if( enIntervalo && actual.CLASE_VEHICULO.equalsIgnoreCase(clase)){
+				colaPQ.insert(actual);
+			}
+		}
+		for (int i = 0; i<colaPQ.size(); i++){
+			view.imprimirComparendoReq3((Comparendo) colaPQ.delMax());
+		}
 	}
 
 

@@ -8,7 +8,6 @@ import com.google.gson.Gson;
 
 import controller.Controller;
 import model.data_structures.ArbolRojoNegro;
-import model.data_structures.Comparendo;
 import view.View;
 
 

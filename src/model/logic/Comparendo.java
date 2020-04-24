@@ -1,4 +1,6 @@
-package model.data_structures;
+package model.logic;
+
+import model.data_structures.llaveC;
 
 import java.text.DateFormat;
 import java.text.ParseException;

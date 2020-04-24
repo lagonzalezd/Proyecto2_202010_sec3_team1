@@ -1,7 +1,5 @@
 package model.data_structures;
 
-import model.logic.Comparendo;
-
 import java.util.Comparator;
 
 public class compararDistancia implements Comparator<Comparendo>{

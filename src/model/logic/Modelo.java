@@ -8,6 +8,7 @@ import com.google.gson.Gson;
 
 import controller.Controller;
 import model.data_structures.ArbolRojoNegro;
+import model.data_structures.Comparendo;
 import view.View;
 
 
@@ -18,10 +19,10 @@ public class Modelo {
 
 	private static View view;
 
-	//Valor inicial para el nï¿½mero de datos a cargar
+	//Valor inicial para el número de datos a cargar
 	public int N;
 
-	private static final String PATH = "./data/Comparendos_DEI_2018_Bogotï¿½_D.C_small.geojson";
+	private static final String PATH = "./data/Comparendos_DEI_2018_Bogotá_D.C_small.geojson";
 	public static double tiempoCarga;
 	public static double tiempoInicio;
 	public static double tiempoFin;
@@ -72,7 +73,7 @@ public class Modelo {
 			tiempoCarga = (tiempoFin-tiempoInicio)/1000;
 
 
-		}t -m
+		}
 		catch (Exception e)
 		{
 			e.getStackTrace();

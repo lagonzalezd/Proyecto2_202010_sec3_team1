@@ -1,14 +1,29 @@
+  
 package model.data_structures;
 
-import model.logic.Comparendo;
+public class Value<K> {
 
-public class Value {
 	
-	private Comparendo objeto;
+	private Value<K> siguiente;
+	private K info;
+
 	
-	public Value(Comparendo pObjeto){
-		objeto = pObjeto;
+	public Value(K pDatos){
+		info = pDatos;
+		siguiente = null;
 	}
 	
-
+	//Métodos, getters y setters
+	public K darInfo(){
+		return info;
+	}
+	
+	public Value<K> getNext(){
+		return siguiente;
+	}
+	
+	public void cambiarSiguiente(Value<K> pValue){
+		siguiente = pValue;
+	}
+	
 }

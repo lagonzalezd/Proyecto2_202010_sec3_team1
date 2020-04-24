@@ -1,69 +1,76 @@
 package controller;
 
+import java.util.Scanner;
+
 import model.data_structures.ArbolRojoNegro;
-import model.logic.Comparendo;
 import model.logic.Modelo;
 import view.View;
 
-import java.util.InputMismatchException;
-import java.util.Iterator;
-import java.util.Scanner;
-
-
 public class Controller {
-
 
 	private Modelo modelo;
 
 	private View view;
 
-	private Scanner reader;
+	private ArbolRojoNegro arbolRN;
 
-	private ArbolRojoNegro<String, String> arbolRN;
-	
-	private Comparendo m;
-
-	
 	public Controller ()
 	{
 		view = new View();
 		modelo = new Modelo();
 	}
 
-	public void run() throws InputMismatchException 
+	public void run() 
 	{
-		reader = new Scanner(System.in);
-		try
-		{
-			boolean fin = false;
-			while( !fin ){
-				view.printMenu();
-				int option = reader.nextInt();
-				switch(option){
-					case 0:
-						modelo.cargarDatos();
-						arbolRN = modelo.darArbol();
-						view.printMessage(arbolRN.max().toString() + "");
-						break;
-					case 1:
-						
+		Scanner lector = new Scanner(System.in);
+		boolean fin = false;
 
-					case 2:
-						
-						break;
-					case 3:
-						
-					case 4:
-						
-					default:
-						view.badOption();
-						fin = true;
+		while( !fin ){
 
-				}
+			view.printMenu();
+
+			int option = lector.nextInt();
+			switch(option){
+
+			case 0:
+				modelo.cargar();
+
+				modelo.requerimientosCargar();
+
+				break;
+			case 1:
+
+				break;
+			case 2:
+
+				break;
+			case 3:
+
+				break;
+			case 4:
+
+				break;
+			case 5:
+
+				break;
+			case 6:
+
+				break;
+			case 7:
+
+				break;
+			case 8:
+
+				break;
+			case 9:
+
+				break;
+
+			default: 
+				view.printMessage("------------ Opcion invalida ---------- ");
+				break;
 			}
 		}
-		catch(InputMismatchException e){
-			run();
-		}
-	}
+
+	}	
 }

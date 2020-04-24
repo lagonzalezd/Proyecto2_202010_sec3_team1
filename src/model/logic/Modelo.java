@@ -1,92 +1,167 @@
 package model.logic;
 
-import java.awt.List;
-import java.io.File;
+import java.io.BufferedReader;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.InputStreamReader;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Date;
-import java.util.Random;
+
+import com.google.gson.Gson;
+
+import controller.Controller;
+import model.data_structures.ArbolRojoNegro;
+import model.data_structures.Comparendo;
+import view.View;
 
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonParser;
-import com.google.gson.stream.JsonReader;
-import model.data_structures.*;
 
 public class Modelo {
 
-	/**
-	 * Arbol rojo negro.
-	 */
-	private ArbolRojoNegro datosArbol;
+	private Controller controller;
+
+	private static View view;
+
+	//Valor inicial para el número de datos a cargar
+	public int N;
+
+	private static final String PATH = "./data/Comparendos_DEI_2018_Bogotá_D.C_small.geojson";
+	public static double tiempoCarga;
+	public static double tiempoInicio;
+	public static double tiempoFin;
+
+	public static int mayorOID;
+
+	@SuppressWarnings("rawtypes")
+	private static ArbolRojoNegro arbol;
+
+	public Modelo(){
+		tiempoCarga=0;
+		tiempoInicio=0;
+		tiempoFin=0;
+		N = 20;
+		view = new View();
+	}
 
 
-	private static Comparable[] aux;
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	public static void cargar(){
 
-	/**
-	 * Constructor del modelo del mundo con capacidad predefinida
-	 */
-	public static String PATH = "./data/Comparendos_DEI_2018_Bogotá_D.C_small.geojson";
-
-
-	/**
-	 * Carga el archivo .JSON en una lista enlazada.
-	 * @throws FileNotFoundException. Si no encuentra el archivo.
-	 */
-	public void cargarDatos() {
-
-		JsonReader reader;
-		datosArbol = new ArbolRojoNegro<>();
+		arbol = new ArbolRojoNegro();
 
 		try {
-			reader = new JsonReader(new FileReader(PATH));
-			JsonElement elem = JsonParser.parseReader(reader);
-			JsonArray e2 = elem.getAsJsonObject().get("features").getAsJsonArray();
+			FileInputStream inputStream;
+			inputStream = new FileInputStream(PATH);
+			InputStreamReader inputStreamreader = new InputStreamReader(inputStream);
+			BufferedReader bufferedReader = new BufferedReader(inputStreamreader);
 
-			SimpleDateFormat parser = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
+			Json cargar =  new Gson().fromJson(bufferedReader, Json.class);
 
-			for (JsonElement e : e2) {
-				int OBJECTID = e.getAsJsonObject().get("properties").getAsJsonObject().get("OBJECTID").getAsInt();
+			tiempoInicio = System.currentTimeMillis();
 
-				String s = e.getAsJsonObject().get("properties").getAsJsonObject().get("FECHA_HORA").getAsString();
-				Date FECHA_HORA = parser.parse(s);
+			for (int i=0; i<cargar.features.length;i++){
+				Comparendo comp = new Comparendo(cargar.features[i].properties.OBJECTID, cargar.features[i].properties.FECHA_HORA, 
+						cargar.features[i].properties.MEDIO_DETECCION,cargar.features[i].properties.CLASE_VEHICULO,
+						cargar.features[i].properties.TIPO_SERVICIO,cargar.features[i].properties.INFRACCION, 
+						cargar.features[i].properties.DES_INFRACCION,cargar.features[i].properties.LOCALIDAD, 
+						cargar.features[i].properties.MUNICIPIO,cargar.features[i].geometry.coordinates[0], 
+						cargar.features[i].geometry.coordinates[1]);
 
-				String MEDIO_DETE = e.getAsJsonObject().get("properties").getAsJsonObject().get("MEDIO_DETECCION").getAsString();
-				String CLASE_VEHI = e.getAsJsonObject().get("properties").getAsJsonObject().get("CLASE_VEHICULO").getAsString();
-				String TIPO_SERVI = e.getAsJsonObject().get("properties").getAsJsonObject().get("TIPO_SERVICIO").getAsString();
-				String INFRACCION = e.getAsJsonObject().get("properties").getAsJsonObject().get("INFRACCION").getAsString();
-				String DES_INFRAC = e.getAsJsonObject().get("properties").getAsJsonObject().get("DES_INFRACCION").getAsString();
-				String LOCALIDAD = e.getAsJsonObject().get("properties").getAsJsonObject().get("LOCALIDAD").getAsString();
-				String MUNICIPIO = e.getAsJsonObject().get("properties").getAsJsonObject().get("MUNICIPIO").getAsString();
+				arbol.put(comp.darLlave(), comp);
 
-				double longitud = e.getAsJsonObject().get("geometry").getAsJsonObject().get("coordinates").getAsJsonArray()
-						.get(0).getAsDouble();
-
-				double latitud = e.getAsJsonObject().get("geometry").getAsJsonObject().get("coordinates").getAsJsonArray()
-						.get(1).getAsDouble();
-
-				Comparendo c = new Comparendo(OBJECTID, FECHA_HORA, DES_INFRAC, MEDIO_DETE, CLASE_VEHI, TIPO_SERVI, INFRACCION, LOCALIDAD, MUNICIPIO, longitud, latitud);
-
-				datosArbol.put(c.getllave(), new Value(c));
 			}
 
+
+			tiempoFin = System.currentTimeMillis();
+			tiempoCarga = (tiempoFin-tiempoInicio)/1000;
+
+
 		}
-		catch (Exception e){
-			System.out.println(e.getMessage());
-			e.printStackTrace();
+		catch (Exception e)
+		{
+			e.getStackTrace();
 		}
 
 	}
-	
-	public ArbolRojoNegro darArbol(){
-		return datosArbol;
+
+	@SuppressWarnings("unchecked")
+	public static void requerimientosCargar(){
+		Comparendo maximo = (Comparendo) arbol.get(arbol.max());
+		view.mensajeDeCarga(arbol.size() +"", maximo.toString());
 	}
+
+	//****************************************** PARTE A *************************************************
+
+	public void requerimiento1A(){
+
+	}
+
+
+	public void requerimiento2A(){
+
+
+	}
+
+	public void requerimiento3A(){
+
+	}
+
+
+
+	//****************************************** PARTE B *************************************************
+
+	public void requerimiento1B(){
+		
+	}
+
+	public void requerimiento2B(){
+
+	}
+
+	public void requerimiento3B(){
+
+	}
+
+
+	//****************************************** PARTE C *************************************************
+
+	public void requerimiento1C(){
+
+	}
+
+	public void requerimiento2C(){
+
+	}
+
+	public void requerimiento3C(){
+
+	}
+
+
+	//clases del Json para cargar
+	static class Json{
+		String type;
+		Features[] features;
+	}
+
+	static class Features{
+		String type;
+		Properties properties;
+		Geometry geometry;
+	}
+
+	static class Properties{
+		int OBJECTID;
+		String FECHA_HORA;
+		String MEDIO_DETECCION;
+		String CLASE_VEHICULO;
+		String TIPO_SERVICIO;
+		String INFRACCION;
+		String DES_INFRACCION;
+		String LOCALIDAD;
+		String MUNICIPIO;
+	}
+
+	static class Geometry{
+		String type;
+		double[] coordinates;
+	}
+
 }
-

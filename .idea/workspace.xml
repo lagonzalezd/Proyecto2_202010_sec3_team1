@@ -3,11 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="5d92bd22-4991-49ec-ae32-139cc0e31a9b" name="Default Changelist" comment="K">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/logic/Modelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/logic/Modelo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/View.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="Proyecto2_202010" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -36,6 +42,15 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
+  <component name="RunManager">
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.Main" />
+      <module name="Proyecto2_202010" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -50,6 +65,18 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="414" y="207" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587749329168">
+      <screen x="0" y="34" width="1920" height="1046" />
+    </state>
+    <state x="414" y="207" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.34.1920.1046@0.34.1920.1046" timestamp="1587749329168" />
+    <state x="721" y="188" width="468" height="735" key="#com.intellij.ide.util.MemberChooser" timestamp="1587847723942">
+      <screen x="0" y="34" width="1920" height="1046" />
+    </state>
+    <state x="721" y="188" width="468" height="735" key="#com.intellij.ide.util.MemberChooser/0.34.1920.1046@0.34.1920.1046" timestamp="1587847723942" />
+    <state x="627" y="301" width="656" height="510" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1587749328522">
+      <screen x="0" y="34" width="1920" height="1046" />
+    </state>
+    <state x="627" y="301" width="656" height="510" key="#com.intellij.ide.util.TreeClassChooserDialog/0.34.1920.1046@0.34.1920.1046" timestamp="1587749328522" />
     <state x="0" y="34" width="1910" height="1046" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1585793395915">
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
@@ -62,17 +89,33 @@
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
     <state x="446" y="84" width="1018" height="943" key="CommitChangelistDialog2/0.34.1920.1046@0.34.1920.1046" timestamp="1585794334043" />
-    <state x="685" y="258" width="530" height="598" key="FileChooserDialogImpl" timestamp="1585794104360">
+    <state x="685" y="258" width="530" height="598" key="FileChooserDialogImpl" timestamp="1587856450809">
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
-    <state x="685" y="258" width="530" height="598" key="FileChooserDialogImpl/0.34.1920.1046@0.34.1920.1046" timestamp="1585794104360" />
-    <state x="315" y="34" width="1280" height="1046" key="SettingsEditor" timestamp="1585794112041">
+    <state x="685" y="258" width="530" height="598" key="FileChooserDialogImpl/0.34.1920.1046@0.34.1920.1046" timestamp="1587856450809" />
+    <state width="1864" height="263" key="GridCell.Tab.0.bottom" timestamp="1587856607347">
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
-    <state x="315" y="34" width="1280" height="1046" key="SettingsEditor/0.34.1920.1046@0.34.1920.1046" timestamp="1585794112041" />
-    <state x="540" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1587694590701">
+    <state width="1864" height="263" key="GridCell.Tab.0.bottom/0.34.1920.1046@0.34.1920.1046" timestamp="1587856607347" />
+    <state width="1864" height="263" key="GridCell.Tab.0.center" timestamp="1587856607346">
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
-    <state x="540" y="345" key="com.intellij.ide.util.TipDialog/0.34.1920.1046@0.34.1920.1046" timestamp="1587694590701" />
+    <state width="1864" height="263" key="GridCell.Tab.0.center/0.34.1920.1046@0.34.1920.1046" timestamp="1587856607346" />
+    <state width="1864" height="263" key="GridCell.Tab.0.left" timestamp="1587856607346">
+      <screen x="0" y="34" width="1920" height="1046" />
+    </state>
+    <state width="1864" height="263" key="GridCell.Tab.0.left/0.34.1920.1046@0.34.1920.1046" timestamp="1587856607346" />
+    <state width="1864" height="263" key="GridCell.Tab.0.right" timestamp="1587856607347">
+      <screen x="0" y="34" width="1920" height="1046" />
+    </state>
+    <state width="1864" height="263" key="GridCell.Tab.0.right/0.34.1920.1046@0.34.1920.1046" timestamp="1587856607347" />
+    <state x="315" y="34" width="1280" height="1046" key="SettingsEditor" timestamp="1587856460607">
+      <screen x="0" y="34" width="1920" height="1046" />
+    </state>
+    <state x="315" y="34" width="1280" height="1046" key="SettingsEditor/0.34.1920.1046@0.34.1920.1046" timestamp="1587856460607" />
+    <state x="540" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1587747608983">
+      <screen x="0" y="34" width="1920" height="1046" />
+    </state>
+    <state x="540" y="345" key="com.intellij.ide.util.TipDialog/0.34.1920.1046@0.34.1920.1046" timestamp="1587747608983" />
   </component>
 </project>

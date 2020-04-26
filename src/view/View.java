@@ -12,6 +12,10 @@ public class View
 	{
 
 	}
+	
+	public void opcionInvalida(){
+		System.out.println("============================== ¡¡Opción Inválida!! ======================");
+	}
 
 	public void printMenu()
 	{
@@ -34,20 +38,33 @@ public class View
 
 	}
 
-	public void printMessage(String mensaje) {
-		System.out.println(mensaje);
-	}	
-	
-	public void preguntaRequerimiento1(){
-		System.out.println("¿Cuantos datos desea buscar? \n");
-	}
-
 	public void mensajeDeCarga(String numComps, String mayorCompID){
 		System.out.println("El tamanio es: " + numComps);
 		System.out.println("El comparendo con el mayor OBJECTID: " + mayorCompID);
 	}
 	
-	public void preguntaReq2(String aPreguntar){
+
+	public void preguntaRequerimiento1A(){
+		System.out.println("¿Cuantos comparendos desea obtener? \n");
+	}
+	public void preguntaRequerimieto2A(){
+		System.out.println("Ingrese el mes y luego el dia (L,M,I,J,V,S,D) \n");
+	}
+	public void preguntaRequerimiento3A(){
+		System.out.println("Ingrese la fecha minima, luego la maxima y por ultimo la localidad.");
+	}
+
+	public void imprimirComparendo1A(Comparendo comparendo){
+		String datos="ID="+comparendo.OBJECTID+" Tipo Servicio="+comparendo.TIPO_SERVICIO+" InfracciÃ³n="+comparendo.INFRACCION+
+				" Fecha-Hora="+comparendo.FECHA_HORA+" Clase Vehiculo="+comparendo.CLASE_VEHICULO+"\n";
+		System.out.println(datos);
+	}
+	
+	public void preguntaRequerimiento1B(){
+		System.out.println("¿½Cuantos datos desea buscar? \n");
+	}
+
+	public void preguntaReq2B(String aPreguntar){
 		System.out.println("Introduzca el valor " + aPreguntar + ": ");
 	}
 	
@@ -95,8 +112,7 @@ public class View
 		System.out.println("Intruzca los dias por los que quiere buscar");
 	}
 	
-	//parte 2C
-	
+	//2C
 	public void preguntarFechaReq2C(){
 		System.out.println("Introduzca la fecha por la que desea comparar");
 		System.out.println("Escribala en la forma yyyy/MM,dd ejemplo: 2019/04/25");
@@ -115,5 +131,6 @@ public class View
 		System.out.println("   "+ date + "   |   " + asteriscos);
 		System.out.println("                |   " + numerales);
 	}
+
 
 }

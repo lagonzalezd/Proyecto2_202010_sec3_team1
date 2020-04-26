@@ -1,5 +1,6 @@
 package controller;
 
+import java.text.ParseException;
 import java.util.Scanner;
 
 import model.data_structures.ArbolRojoNegro;
@@ -20,7 +21,7 @@ public class Controller {
 		modelo = new Modelo();
 	}
 
-	public void run() 
+	public void run()
 	{
 		Scanner lector = new Scanner(System.in);
 		boolean fin = false;
@@ -36,27 +37,45 @@ public class Controller {
 				modelo.cargar();
 				modelo.requerimientosCargar();
 				break;
-			case 1: //1A
+			case 1:
+				view.preguntaRequerimiento1A();
+				int comparendos = lector.nextInt();
+				modelo.requerimiento1A(comparendos);
 				break;
-			case 2: //2A
-
+			case 2:
+				view.preguntaRequerimieto2A();
+				int mes = lector.nextInt();
+				String dia = lector.next();
+				try {
+					modelo.requerimiento2A(mes, dia);
+				} catch (ParseException e) {
+					e.printStackTrace();
+				}
 				break;
-			case 3: //3A
-
+			case 3:
+				view.preguntaRequerimiento3A();
+				String min = lector.next();
+				String max = lector.next();
+				String loc = lector.next();
+				try {
+					modelo.requerimiento3A(min, max, loc);
+				} catch (ParseException e) {
+					e.printStackTrace();
+				}
 				break;
 			case 4: //1B
-				view.preguntaRequerimiento1();
+				view.preguntaRequerimiento1B();
 				int comparendosAcargar = lector.nextInt();
 				modelo.requerimiento1B(comparendosAcargar);
 				break;
 			case 5: //2B
 				view.imprimirPreguntaReq2();
 				String medio = lector.next();
-				view.preguntaReq2("de la clase");
+				view.preguntaReq2B("de la clase");
 				String clase = lector.next();
-				view.preguntaReq2("del tipo");
+				view.preguntaReq2B("del tipo");
 				String tipo = lector.next();
-				view.preguntaReq2("de la localidad");
+				view.preguntaReq2B("de la localidad");
 				String localidad = lector.next();
 				modelo.requerimiento2B(medio,clase,tipo,localidad);
 				break;
@@ -82,7 +101,7 @@ public class Controller {
 				break;
 
 			default: 
-				view.printMessage("------------ Opcion invalida ---------- ");
+				view.opcionInvalida();
 				break;
 			}
 		}

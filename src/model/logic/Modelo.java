@@ -3,6 +3,7 @@ package model.logic;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -107,21 +108,91 @@ public class Modelo {
 		view.mensajeDeCarga(arbol.size() +"", maximo.toString());
 	}
 
-	//****************************************** PARTE A - Alejando G *************************************************
+	 //****************************************** PARTE A - Alejando G *************************************************
 
-	public void requerimiento1A(){
-	}
+    public void requerimiento1A(int m) {
+
+        colaPQ = new MaxCola(N);
+        Iterator it = arbol.keys(arbol.min(), arbol.max()).iterator();
+
+        while (it.hasNext()) {
+            llaveC y = (llaveC) it.next();
+            Comparendo next = (Comparendo) arbol.get(y);
+            next.cambiarIndicador("INFRACCION");
+            colaPQ.insert(next);
+        }
+
+        for (int i = 0; i < m; i++) {
+            view.imprimirComparendo1A((Comparendo) colaPQ.delMax());
+        }
+
+    }
+
+    public void requerimiento2A(int mes, String dia) throws ParseException {
+
+        int diaInt = 0;
+        if (dia.equalsIgnoreCase("L")) diaInt = 1;
+        else if (dia.equalsIgnoreCase("M")) diaInt = 2;
+        else if (dia.equalsIgnoreCase("I")) diaInt = 3;
+        else if (dia.equalsIgnoreCase("J")) diaInt = 4;
+        else if (dia.equalsIgnoreCase("V")) diaInt = 5;
+        else if (dia.equalsIgnoreCase("S")) diaInt = 6;
+        else if (dia.equalsIgnoreCase("D")) diaInt = 7;
+
+        DateFormat formato = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
+
+        colaPQ = new MaxCola(N);
+        Iterator it = arbol.keys(arbol.min(), arbol.max()).iterator();
+
+        while (it.hasNext()) {
+            llaveC y = (llaveC) it.next();
+            Comparendo next = (Comparendo) arbol.get(y);
+
+            Date date = formato.parse(next.FECHA_HORA);
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTime(date);
+            int mesActual = calendar.get(Calendar.MONTH);
+            int diaActual = calendar.get(Calendar.DAY_OF_WEEK);
+
+            if (diaInt == diaActual && mes == mesActual) {
+                colaPQ.insert(next);
+            }
+
+        }
+
+        for (int i = 0; i < colaPQ.size(); i++) {
+            view.imprimirComparendo1A((Comparendo) colaPQ.delMax());
+        }
 
 
-	public void requerimiento2A(){
+    }
+
+    public void requerimiento3A(String fechaMin, String fechaMax, String pLocalidad) throws ParseException {
+
+        colaPQ = new MaxCola(N);
+        Iterator it = arbol.keys(arbol.min(), arbol.max()).iterator();
+
+        DateFormat formato = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
+        Date minima = formato.parse(fechaMin);
+        Date maxima = formato.parse(fechaMax);
+
+        while(it.hasNext()){
+            llaveC y = (llaveC) it.next();
+            Comparendo next = (Comparendo) arbol.get(y);
+
+            if(next.convertirFechaStringADate().compareTo(minima)>=0&&next.convertirFechaStringADate().compareTo(maxima)<=0&&next.LOCALIDAD.equalsIgnoreCase(pLocalidad))
+            {
+                colaPQ.insert(next);
+            }
+
+            for (int i = 0; i < colaPQ.size(); i++) {
+                view.imprimirComparendo1A((Comparendo) colaPQ.delMax());
+            }
+
+        }
 
 
-	}
-
-	public void requerimiento3A(){
-
-	}
-
+    }
 
 	//****************************************** PARTE B - Geisson P *************************************************
 

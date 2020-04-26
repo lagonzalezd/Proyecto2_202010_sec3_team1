@@ -39,7 +39,7 @@ public class View
 	}	
 	
 	public void preguntaRequerimiento1(){
-		System.out.println("¿Cuantos datos desea buscar? \n");
+		System.out.println("ï¿½Cuantos datos desea buscar? \n");
 	}
 
 	public void mensajeDeCarga(String numComps, String mayorCompID){
@@ -66,6 +66,12 @@ public class View
 	public void imprimirComparendoReq3(Comparendo c){
 		String datos = "" + c.OBJECTID +", " + c.TIPO_SERVICIO +", " + c.INFRACCION +", " + c.FECHA_HORA +", " + c.CLASE_VEHICULO
 				+", " + c.latitud;
+		System.out.println(datos);
+	}
+
+	public void imprimirComparendo1A(Comparendo comparendo){
+		String datos="ID="+comparendo.OBJECTID+" Tipo Servicio="+comparendo.TIPO_SERVICIO+" InfracciÃ³n="+comparendo.INFRACCION+
+				" Fecha-Hora="+comparendo.FECHA_HORA+" Clase Vehiculo="+comparendo.CLASE_VEHICULO;
 		System.out.println(datos);
 	}
 

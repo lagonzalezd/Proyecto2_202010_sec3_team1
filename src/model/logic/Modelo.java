@@ -271,6 +271,7 @@ public class Modelo {
 
     public void requerimiento2C() {
 
+
     }
 
     public void requerimiento3C() {

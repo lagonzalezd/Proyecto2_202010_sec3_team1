@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import model.data_structures.ArbolRojoNegro;
+import org.junit.Test;
 
 
 public class ArbolRojoNegroTest {
@@ -27,12 +28,14 @@ public class ArbolRojoNegroTest {
         assertEquals(50, arbol.size());
     }
 
+    @Test
     public void testisEmpty() {
         assertTrue(arbol.isEmpty());
         setUp1();
         assertTrue(!arbol.isEmpty());
     }
 
+    @Test
     public void testGet() {
     	assertEquals(null, arbol.get(0));
     }

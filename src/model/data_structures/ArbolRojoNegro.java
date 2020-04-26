@@ -1,7 +1,5 @@
 package model.data_structures;
 
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 public class ArbolRojoNegro<Key extends Comparable <Key>,Value>{
@@ -313,7 +311,6 @@ public class ArbolRojoNegro<Key extends Comparable <Key>,Value>{
         if (t != null) return t; 
         else           return x;
     }
-
 
     public Key select(int rank) {
         if (rank < 0 || rank >= size()) {

@@ -19,12 +19,12 @@ public class View
 		System.out.println("0. Cargar los Datos.");
 		System.out.println("======================");
 		System.out.println("1. Requerimiento 1A.");
-		System.out.println("2. Requerimiento 1A.");
-		System.out.println("3. Requerimiento 1A.");
+		System.out.println("2. Requerimiento 2A.");
+		System.out.println("3. Requerimiento 3A.");
 		System.out.println("======================");
 		System.out.println("4. Requerimiento 1B.");
-		System.out.println("5. Requerimiento 1B.");
-		System.out.println("6. Requerimiento 1B");
+		System.out.println("5. Requerimiento 2B.");
+		System.out.println("6. Requerimiento 3B");
 		System.out.println("======================");
 		System.out.println("7. Requerimiento 1C");
 		System.out.println("8. Requerimiento 2C");
@@ -47,15 +47,25 @@ public class View
 		System.out.println("El comparendo con el mayor OBJECTID: " + mayorCompID);
 	}
 	
+	public void preguntaReq2(String aPreguntar){
+		System.out.println("Introduzca el valor " + aPreguntar + ": ");
+	}
+	
 	public void imprimirComparendoReq1(Comparendo c){
 		String datos = "" + c.OBJECTID +", " + c.TIPO_SERVICIO +", " + c.INFRACCION +", " + c.FECHA_HORA +", " + c.CLASE_VEHICULO
 				+", " + c.longitud +", " + c.latitud;
 		System.out.println(datos);
 	}
+	public void imprimirComparendoReq2(Comparendo c){
+		String datos = "" + c.OBJECTID +", " + c.TIPO_SERVICIO +", " + c.INFRACCION 
+				+", " + c.FECHA_HORA +", " + c.CLASE_VEHICULO + ", " +
+				 c.LOCALIDAD;
+		System.out.println(datos);
+	}
 	
 	public void imprimirPreguntaReq2(){
 		System.out.println("Ingrese el medio, la clase, el tipo y la localidad por la que quiere buscar");
-		System.out.println("en la forma 'medio, clase, tipo, localidad' (separados por una unica coma)");
+		System.out.println("Introduzca el medio de deteccion: ");
 	}
 	
 	public void imprimirPreguntaReq3(){
@@ -67,6 +77,43 @@ public class View
 		String datos = "" + c.OBJECTID +", " + c.TIPO_SERVICIO +", " + c.INFRACCION +", " + c.FECHA_HORA +", " + c.CLASE_VEHICULO
 				+", " + c.latitud;
 		System.out.println(datos);
+	}
+	
+	//*************************************PARTE C**************************************
+	
+	//1C
+	public void visualizarASCII1C(){
+		System.out.println("       Rango de fechas       |       Comparendos durante el año  ");
+		System.out.println("-------------------------------------------------------------------");
+	}
+	
+	public void rangoDeFechas1C(String date1, String date2, String asteriscos){
+		System.out.println("   "+ date1 + " - " + date2 +"   |   " + asteriscos);
+	}
+	
+	public void preguntaREQ1C(){
+		System.out.println("Intruzca los dias por los que quiere buscar");
+	}
+	
+	//parte 2C
+	
+	public void preguntarFechaReq2C(){
+		System.out.println("Introduzca la fecha por la que desea comparar");
+		System.out.println("Escribala en la forma yyyy/MM,dd ejemplo: 2019/04/25");
+
+	}
+	
+	public void costoTotal(String costo){
+		System.out.println("El costo total que generan las penalizaciones en 2018 es de: " + costo);
+	}
+	public void visualizarASCII2C(){
+		System.out.println("       Fecha     |    ComparendoProcesados           ***        ");
+		System.out.println("                 |    Comparendos que están en espera ###       ");
+		System.out.println("-------------------------------------------------------------------");
+	}
+	public void rangoDeFechas2C(String date, String asteriscos, String numerales){
+		System.out.println("   "+ date + "   |   " + asteriscos);
+		System.out.println("                |   " + numerales);
 	}
 
 }

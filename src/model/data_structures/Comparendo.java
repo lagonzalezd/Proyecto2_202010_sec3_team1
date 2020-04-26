@@ -1,6 +1,4 @@
-package model.logic;
-
-import model.data_structures.llaveC;
+package model.data_structures;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -62,7 +60,7 @@ public class Comparendo implements Comparable<Comparendo> {
 	}
 	
 	public Date convertirFechaStringADate(){
-		DateFormat fechaHora = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		DateFormat fechaHora = new SimpleDateFormat("yyyy-MM-dd");
 		Date convertido = null;
 		try {
 			convertido = fechaHora.parse(FECHA_HORA);
@@ -84,6 +82,11 @@ public class Comparendo implements Comparable<Comparendo> {
 			Date estaFecha = convertirFechaStringADate();
 			Date otraFecha = ob.convertirFechaStringADate();
 			return estaFecha.compareTo(otraFecha);
+		}
+		else if (indicadorComparacion.equals("FECHAMIN")){
+			Date estaFecha = convertirFechaStringADate();
+			Date otraFecha = ob.convertirFechaStringADate();
+			return -1 * estaFecha.compareTo(otraFecha);
 		}
 		return 0;
 	}

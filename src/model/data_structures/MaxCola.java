@@ -6,9 +6,9 @@ import java.util.NoSuchElementException;
 
 public class MaxCola<Key> implements Iterable<Key> {
 
-	private Key[] pq;                    // store items at indices 1 to n
-	private int n;                       // number of items on priority queue
-	private Comparator<Key> comparator;  // optional comparator
+	private Key[] pq;
+	private int n;
+	private Comparator<Key> comparator;
 
 	/**
 	 * Initializes an empty priority queue with the given initial capacity.
@@ -142,10 +142,6 @@ public class MaxCola<Key> implements Iterable<Key> {
 	}
 
 
-	/***************************************************************************
-	 * Helper functions to restore the heap invariant.
-	 ***************************************************************************/
-
 	private void swim(int k) {
 		while (k > 1 && less(k/2, k)) {
 			exch(k, k/2);
@@ -163,9 +159,6 @@ public class MaxCola<Key> implements Iterable<Key> {
 		}
 	}
 
-	/***************************************************************************
-	 * Helper functions for compares and swaps.
-	 ***************************************************************************/
 	private boolean less(int i, int j) {
 		if (comparator == null) {
 			return ((Comparable<Key>) pq[i]).compareTo(pq[j]) < 0;

@@ -33,7 +33,7 @@ public class Controller {
 			int option = lector.nextInt();
 			switch(option){
 
-			case 0:
+			case 0: //carga
 				modelo.cargar();
 				modelo.requerimientosCargar();
 				break;
@@ -63,33 +63,45 @@ public class Controller {
 					e.printStackTrace();
 				}
 				break;
-			case 4:
-				view.preguntaRequerimiento1();
+			case 4: //1B
+				view.preguntaRequerimiento1B();
 				int comparendosAcargar = lector.nextInt();
 				modelo.requerimiento1B(comparendosAcargar);
 				break;
-			case 5:
+			case 5: //2B
 				view.imprimirPreguntaReq2();
-				String datos = lector.next();
-				modelo.requerimiento2B(datos);
+				String medio = lector.next();
+				view.preguntaReq2B("de la clase");
+				String clase = lector.next();
+				view.preguntaReq2B("del tipo");
+				String tipo = lector.next();
+				view.preguntaReq2B("de la localidad");
+				String localidad = lector.next();
+				modelo.requerimiento2B(medio,clase,tipo,localidad);
 				break;
-			case 6:
+			case 6: //3B
 				view.imprimirPreguntaReq3();
 				String datos3 = lector.next();
 				modelo.requerimiento3B(datos3);
 				break;
-			case 7:
-
+			case 7: //1C
+				view.preguntaREQ1C();
+				int req1C = lector.nextInt();
+				view.visualizarASCII1C();
+				modelo.requerimiento1C(req1C);
 				break;
-			case 8:
-
+			case 8: //2C
+				view.preguntarFechaReq2C();
+				String fecha = lector.next();
+				view.visualizarASCII2C();
+				modelo.requerimiento2C(fecha);
 				break;
-			case 9:
-
+			case 9: //3C
+				
 				break;
 
 			default: 
-				view.printMessage("------------ Opcion invalida ---------- ");
+				view.opcionInvalida();
 				break;
 			}
 		}

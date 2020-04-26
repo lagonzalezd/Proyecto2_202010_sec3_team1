@@ -1,16 +1,18 @@
 package data_structures;
 
 import model.data_structures.ArbolRojoNegro;
+import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.Assert.*;
+
 
 public class ArbolRojoNegroTest {
 
     private ArbolRojoNegro arbol;
     private static int TAMANO = 50;
 
+    @Before
     public void setUp1() {
         arbol = new ArbolRojoNegro();
         for (int i = 0; i < TAMANO; i++) {
@@ -21,72 +23,43 @@ public class ArbolRojoNegroTest {
     @Test
     public void testsize() {
         setUp1();
-
         assertEquals(50, arbol.size());
-
     }
 
     @Test
     public void testisEmpty() {
         assertTrue(arbol.isEmpty());
-
+        setUp1();
+        assertTrue(!arbol.isEmpty());
     }
 
     @Test
     public void testGet() {
-
+    	assertEquals(null, arbol.get(0));
     }
 
-    @Test
-    public void testContains() {
+    public void testContainsDeleteAndPut() {
+    	setUp1();
+    	assertEquals(true, arbol.contains(30));
+    	assertEquals(false, arbol.contains(120));
+    	assertEquals(true, arbol.contains(1));
+    	arbol.delete(21);
+    	assertEquals(false, arbol.contains(21));
+    	arbol.put(21, 21);
+    	assertEquals(true, arbol.contains(21));
     }
 
-    @Test
-    public void testPut() {
+    public void testDeleteMinAndMin() {
+    	setUp1();
+    	Comparable minimo = arbol.min();
+    	arbol.deleteMin();
+    	assertFalse(minimo != arbol.min());
     }
 
-    @Test
-    public void testDeleteMin() {
+    public void testDeleteMaxAndMax() {
+    	setUp1();
+    	Comparable max = arbol.max();
+    	arbol.deleteMax();
+    	assertFalse(max != arbol.max());
     }
-
-    @Test
-    public void testDeleteMax() {
-    }
-
-    @Test
-    public void testDelete() {
-    }
-
-    @Test
-    public void testHeight() {
-    }
-
-    @Test
-    public void testMin() {
-    }
-
-    @Test
-    public void testMax() {
-    }
-
-    @Test
-    public void testFloor() {
-    }
-
-    @Test
-    public void testCeiling() {
-    }
-
-    @Test
-    public void testSelect() {
-    }
-
-    @Test
-    public void testRank() {
-    }
-
-    @Test
-    public void testKeys() {
-    }
-
 }

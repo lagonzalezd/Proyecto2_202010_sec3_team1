@@ -442,7 +442,7 @@ public class Modelo {
 				String asteriscos = "";
 				String numerales = "";
 
-				while(cont != 1500 && act.convertirFechaStringADate().compareTo(diaActual) == 0){
+				while(cont != 1500 && (procesarComparendo(act) == 400 || procesarComparendo(act) == 40)&& act.convertirFechaStringADate().compareTo(diaActual) == 0 ){
 					cont++;
 
 					while(!espera.isEmpty() && cont != 1500){

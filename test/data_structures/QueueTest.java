@@ -1,23 +1,22 @@
 package data_structures;
 
 import model.data_structures.Queue;
-import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.Assert.*;
 
+import org.junit.Test;
 
 class QueueTest {
 
     private Queue cola;
 
-    private static int TAMANO = 50;
+    private static int TAMANO = 30;
 
-    public void setUpcola = new Queue();
+    public void setUp1() {
+        cola = new Queue();
         for (int i = 0; i < TAMANO; i++) {
-        cola.enqueue(i);
-    }1() {
-
+            cola.enqueue(i);
+        }
     }
 
 
@@ -52,10 +51,5 @@ class QueueTest {
         cola.enqueue(6);
         cola.enqueue(7);
         assertEquals(5, cola.dequeue());
-    }
-
-    @Test
-    public void iterator() {
-        cola.iterator();
     }
 }

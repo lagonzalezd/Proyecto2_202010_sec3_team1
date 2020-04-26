@@ -132,5 +132,4 @@ public class View
 		System.out.println("                |   " + numerales);
 	}
 
-
 }

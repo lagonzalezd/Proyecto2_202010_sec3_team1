@@ -1,7 +1,7 @@
 package data_structures;
 
 import org.junit.Before;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 class MaxColaTest {
 

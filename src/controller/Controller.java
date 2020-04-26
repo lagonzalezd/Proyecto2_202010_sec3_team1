@@ -1,11 +1,11 @@
 package controller;
 
-import java.text.ParseException;
-import java.util.Scanner;
-
 import model.data_structures.ArbolRojoNegro;
 import model.logic.Modelo;
 import view.View;
+
+import java.text.ParseException;
+import java.util.Scanner;
 
 public class Controller {
 
@@ -98,9 +98,12 @@ public class Controller {
 				modelo.requerimiento2C(fecha);
 				break;
 			case 9: //3C
-				
+				view.preguntarFechaReq2C();
+				String fecha2 = lector.next();
+				view.visualizarASCII2C();
+				modelo.darCostoTotalPenalizacion();
+				modelo.requerimiento2C(fecha2);
 				break;
-
 			default: 
 				view.opcionInvalida();
 				break;

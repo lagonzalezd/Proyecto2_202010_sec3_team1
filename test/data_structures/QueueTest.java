@@ -6,17 +6,18 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+
 class QueueTest {
 
     private Queue cola;
 
     private static int TAMANO = 50;
 
-    public void setUp1() {
-        cola = new Queue();
+    public void setUpcola = new Queue();
         for (int i = 0; i < TAMANO; i++) {
-            cola.enqueue(i);
-        }
+        cola.enqueue(i);
+    }1() {
+
     }
 
 
@@ -55,5 +56,6 @@ class QueueTest {
 
     @Test
     public void iterator() {
+        cola.iterator();
     }
 }

@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5d92bd22-4991-49ec-ae32-139cc0e31a9b" name="Default Changelist" comment="K">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/data_structures/ArbolRojoNegro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/data_structures/ArbolRojoNegro.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/data_structures/IArbolRojoNegro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/data_structures/IArbolRojoNegro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/data_structures/LinkedListBaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/data_structures/LinkedListBaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/data_structures/QueueTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/data_structures/QueueTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

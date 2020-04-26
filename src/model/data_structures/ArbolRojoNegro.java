@@ -1,10 +1,8 @@
 package model.data_structures;
 
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class ArbolRojoNegro<Key extends Comparable <Key>,Value>{
+public class ArbolRojoNegro<Key extends Comparable <Key>,Value> implements IArbolRojoNegro<Key, Value>{
 
     private static final boolean RED   = true;
     private static final boolean BLACK = false;
@@ -460,7 +458,7 @@ public class ArbolRojoNegro<Key extends Comparable <Key>,Value>{
      * @param  rank the order statistic
      * @return the key in the symbol table of given {@code rank}
      * @throws IllegalArgumentException unless {@code rank} is between 0 and
-     *        <em>n</em>–1
+     *        <em>n</em>?1
      */
     public Key select(int rank) {
         if (rank < 0 || rank >= size()) {

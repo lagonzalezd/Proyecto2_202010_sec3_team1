@@ -109,13 +109,13 @@ public class View
 	}
 	
 	public void preguntaREQ1C(){
-		System.out.println("Intruzca los dias por los que quiere buscar");
+		System.out.println("Intruzca el tamanio del rango de dias por los que se van a dividir los comparendos: ");
 	}
 	
 	//2C
 	public void preguntarFechaReq2C(){
 		System.out.println("Introduzca la fecha por la que desea comparar");
-		System.out.println("Escribala en la forma yyyy/MM,dd ejemplo: 2019/04/25");
+		System.out.println("Escribala en la forma yyyy/MM/dd ejemplo: 2019/04/25");
 
 	}
 	

@@ -40,10 +40,10 @@ public class Modelo {
 	 * Mediano = ./data/Comparendos_DEI_2018_Bogotï¿½_D.C_50000_.geojson
 	 * pequenio = ./data/Comparendos_DEI_2018_Bogotï¿½_D.C_small.geojson
 	 */
-	private static final String GRANDE = "./data/Comparendos_DEI_2018_Bogotï¿½_D.C.geojson";
-	private static final String MEDIANOORDENADO = "./data/Comparendos_DEI_2018_Bogotï¿½_D.C_small_50000_sorted.geojson";
-	private static final String MEDIANO = "./data/Comparendos_DEI_2018_Bogotï¿½_D.C_50000_.geojson";
-	private static final String PEQUENIO = "./data/Comparendos_DEI_2018_Bogotï¿½_D.C_small.geojson";
+	private static final String GRANDE = "./data/Comparendos_DEI_2018_Bogotá_D.C.geojson";
+	private static final String MEDIANOORDENADO = "./data/Comparendos_DEI_2018_Bogotá_D.C_small_50000_sorted.geojson";
+	private static final String MEDIANO = "./data/Comparendos_DEI_2018_Bogotá_D.C_50000_.geojson";
+	private static final String PEQUENIO = "./data/Comparendos_DEI_2018_Bogotá_D.C_small.geojson";
 
 
 	public static int mayorOID;
@@ -96,11 +96,6 @@ public class Modelo {
 		}
 
 	}
-
-	public void auxiliarReq1B(){
-
-	}
-
 
 	@SuppressWarnings("unchecked")
 	public static void requerimientosCargar(){
@@ -345,9 +340,86 @@ public class Modelo {
 		else
 			return 4;
 	}
-
+	public void darCostoTotalPenalizacion(){
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");
+		int totalRecaudadoPorPe = 0;
+		Iterator it = arbol.keys(arbol.min(), arbol.max()).iterator();
+		Date ultimoDia = null;
+		try {
+			ultimoDia = formatter.parse("2019/01/01");
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		while(it.hasNext()){
+			llaveC k = (llaveC) it.next();
+			Comparendo actual = (Comparendo) arbol.get(k);
+			totalRecaudadoPorPe += procesarComparendo(actual)*calcularDiasEntre2Fechas(actual.convertirFechaStringADate(),ultimoDia );
+		}
+		view.costoTotal(totalRecaudadoPorPe + "");
+	}
 	public void requerimiento2C(String fechaIngresada){
 
+		//muevo los datos del arbol rojo negro a una estructura de linear probing
+		Queue procesados = new Queue();
+		Queue espera = new Queue();
+
+		LinkedListBase todosLosDatos = new LinkedListBase<>();
+
+		Iterator it = arbol.keys(arbol.min(), arbol.max()).iterator();
+
+		while(it.hasNext()){
+			llaveC k = (llaveC) it.next();
+			Comparendo actual = (Comparendo) arbol.get(k);
+			todosLosDatos.add(actual);
+		}
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");
+		try {
+			Iterator itLin = todosLosDatos.iterator();
+			Comparendo act = (Comparendo) itLin.next();
+
+			Date input = formatter.parse(fechaIngresada);
+			Date primerDia = formatter.parse("2018/01/01");
+			Date ultimoDia = formatter.parse("2018/12/32");
+			Date diaActual = primerDia;
+
+			while(diaActual.compareTo(ultimoDia) != 0){
+				String fechaActualString = formatter.format(diaActual);
+				int cont = 0;
+				String asteriscos = "";
+				String numerales = "";
+
+				while(cont != 1500 && act.convertirFechaStringADate().compareTo(diaActual) == 0){
+					cont++;
+
+					while(!espera.isEmpty() && cont != 1500){
+						cont++;
+						asteriscos += "*";
+						procesados.enqueue(espera.dequeue());
+					}
+					if(cont!=1500){
+						asteriscos += "*";
+						procesados.enqueue(act);
+					}
+					act = (Comparendo) itLin.next();
+				}
+
+				if(procesados.size() == 1500 ){
+					while(act.convertirFechaStringADate().compareTo(diaActual) == 0){
+						numerales += "#";
+						espera.enqueue(act);
+						act = (Comparendo) itLin.next();
+					}
+				}
+				view.rangoDeFechas2C(fechaActualString, asteriscos, numerales);
+				diaActual = sumarRestarDiasFecha(diaActual, 1);
+			}
+			
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void requerimiento3C(String fechaIngresada){
 		int totalPenalizacion = 0;
 		//muevo los datos del arbol rojo negro a una estructura de linear probing
 		Queue procesados = new Queue();
@@ -405,10 +477,6 @@ public class Modelo {
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
-	}
-
-	public void requerimiento3C(){
-
 	}
 
 

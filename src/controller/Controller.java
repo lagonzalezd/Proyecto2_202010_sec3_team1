@@ -94,6 +94,7 @@ public class Controller {
 				view.preguntarFechaReq2C();
 				String fecha = lector.next();
 				view.visualizarASCII2C();
+				modelo.darCostoTotalPenalizacion();
 				modelo.requerimiento2C(fecha);
 				break;
 			case 9: //3C

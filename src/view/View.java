@@ -71,8 +71,17 @@ public class View
 
 	public void imprimirComparendo1A(Comparendo comparendo){
 		String datos="ID="+comparendo.OBJECTID+" Tipo Servicio="+comparendo.TIPO_SERVICIO+" Infracción="+comparendo.INFRACCION+
-				" Fecha-Hora="+comparendo.FECHA_HORA+" Clase Vehiculo="+comparendo.CLASE_VEHICULO;
+				" Fecha-Hora="+comparendo.FECHA_HORA+" Clase Vehiculo="+comparendo.CLASE_VEHICULO+"\n";
 		System.out.println(datos);
+	}
+	public void preguntaRequerimiento1A(){
+		System.out.println("¿Cuantos comparendos desea obtener? \n");
+	}
+	public void preguntaRequerimieto2A(){
+		System.out.println("Ingrese el mes y luego el dia (L,M,I,J,V,S,D) \n");
+	}
+	public void preguntaRequerimiento3A(){
+		System.out.println("Ingrese la fecha minima, luego la maxima y por ultimo la localidad.");
 	}
 
 }

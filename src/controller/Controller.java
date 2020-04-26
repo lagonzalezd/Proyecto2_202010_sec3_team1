@@ -1,5 +1,6 @@
 package controller;
 
+import java.text.ParseException;
 import java.util.Scanner;
 
 import model.data_structures.ArbolRojoNegro;
@@ -20,7 +21,7 @@ public class Controller {
 		modelo = new Modelo();
 	}
 
-	public void run() 
+	public void run()
 	{
 		Scanner lector = new Scanner(System.in);
 		boolean fin = false;
@@ -37,12 +38,30 @@ public class Controller {
 				modelo.requerimientosCargar();
 				break;
 			case 1:
+				view.preguntaRequerimiento1A();
+				int comparendos = lector.nextInt();
+				modelo.requerimiento1A(comparendos);
 				break;
 			case 2:
-
+				view.preguntaRequerimieto2A();
+				int mes = lector.nextInt();
+				String dia = lector.next();
+				try {
+					modelo.requerimiento2A(mes, dia);
+				} catch (ParseException e) {
+					e.printStackTrace();
+				}
 				break;
 			case 3:
-
+				view.preguntaRequerimiento3A();
+				String min = lector.next();
+				String max = lector.next();
+				String loc = lector.next();
+				try {
+					modelo.requerimiento3A(min, max, loc);
+				} catch (ParseException e) {
+					e.printStackTrace();
+				}
 				break;
 			case 4:
 				view.preguntaRequerimiento1();

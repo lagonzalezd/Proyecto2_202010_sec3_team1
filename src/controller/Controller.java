@@ -98,9 +98,12 @@ public class Controller {
 				modelo.requerimiento2C(fecha);
 				break;
 			case 9: //3C
-				
+				view.preguntarFechaReq2C();
+				String fecha2 = lector.next();
+				view.visualizarASCII2C();
+				modelo.darCostoTotalPenalizacion();
+				modelo.requerimiento2C(fecha2);
 				break;
-
 			default: 
 				view.opcionInvalida();
 				break;

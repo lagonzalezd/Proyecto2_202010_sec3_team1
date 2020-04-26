@@ -1,6 +1,12 @@
 package model.data_structures;
 
 public class Haversine {
+	
+	/*
+	 * Clase que calcula con el método Haversine la distacia entre 2 puntos en latitud y longitud.
+	 */
+	
+	
 	private static final int EARTH_RADIUS = 6371; // Approx Earth radius in KM
 
 	public static double distance(double startLat, double startLong,

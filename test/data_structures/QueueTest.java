@@ -1,16 +1,16 @@
 package data_structures;
 
 import model.data_structures.Queue;
-import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.Assert.*;
+
+import org.junit.Test;
 
 class QueueTest {
 
     private Queue cola;
 
-    private static int TAMANO = 50;
+    private static int TAMANO = 30;
 
     public void setUp1() {
         cola = new Queue();
@@ -51,9 +51,5 @@ class QueueTest {
         cola.enqueue(6);
         cola.enqueue(7);
         assertEquals(5, cola.dequeue());
-    }
-
-    @Test
-    public void iterator() {
     }
 }

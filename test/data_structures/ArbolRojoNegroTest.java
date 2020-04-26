@@ -1,15 +1,19 @@
 package data_structures;
 
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
 import model.data_structures.ArbolRojoNegro;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ArbolRojoNegroTest {
 
     private ArbolRojoNegro arbol;
     private static int TAMANO = 50;
 
+    @Before
     public void setUp1() {
         arbol = new ArbolRojoNegro();
         for (int i = 0; i < TAMANO; i++) {
@@ -17,61 +21,44 @@ public class ArbolRojoNegroTest {
         }
     }
 
-
+    @Test
     public void testsize() {
         setUp1();
-
         assertEquals(50, arbol.size());
-
     }
 
     public void testisEmpty() {
         assertTrue(arbol.isEmpty());
-
+        setUp1();
+        assertTrue(!arbol.isEmpty());
     }
 
     public void testGet() {
-
+    	assertEquals(null, arbol.get(0));
     }
 
-    public void testContains() {
-        arbol.contains()
+    public void testContainsDeleteAndPut() {
+    	setUp1();
+    	assertEquals(true, arbol.contains(30));
+    	assertEquals(false, arbol.contains(120));
+    	assertEquals(true, arbol.contains(1));
+    	arbol.delete(21);
+    	assertEquals(false, arbol.contains(21));
+    	arbol.put(21, 21);
+    	assertEquals(true, arbol.contains(21));
     }
 
-    public void testPut() {
+    public void testDeleteMinAndMin() {
+    	setUp1();
+    	Comparable minimo = arbol.min();
+    	arbol.deleteMin();
+    	assertFalse(minimo != arbol.min());
     }
 
-    public void testDeleteMin() {
+    public void testDeleteMaxAndMax() {
+    	setUp1();
+    	Comparable max = arbol.max();
+    	arbol.deleteMax();
+    	assertFalse(max != arbol.max());
     }
-
-    public void testDeleteMax() {
-    }
-
-    public void testDelete() {
-    }
-
-    public void testHeight() {
-    }
-
-    public void testMin() {
-    }
-
-    public void testMax() {
-    }
-
-    public void testFloor() {
-    }
-
-    public void testCeiling() {
-    }
-
-    public void testSelect() {
-    }
-
-    public void testRank() {
-    }
-
-    public void testKeys() {
-    }
-
 }

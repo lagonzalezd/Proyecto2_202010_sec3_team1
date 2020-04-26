@@ -1,5 +1,10 @@
 package model.logic;
 
+import com.google.gson.Gson;
+import controller.Controller;
+import model.data_structures.*;
+import view.View;
+
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
@@ -9,19 +14,6 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Iterator;
-
-import com.google.gson.Gson;
-
-import controller.Controller;
-
-import model.data_structures.ArbolRojoNegro;
-import model.data_structures.Comparendo;
-import model.data_structures.LinkedListBase;
-import model.data_structures.MaxCola;
-import model.data_structures.Queue;
-import model.data_structures.llaveC;
-
-import view.View;
 
 
 
@@ -290,10 +282,10 @@ public class Modelo {
 			colaPQ.insert(actual);
 		}
 
-		SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");
+		SimpleDateFormat formater = new SimpleDateFormat("yyyy/MM/dd");
 		try {
-			Date primerDia = formatter.parse("2018/01/01");
-			Date ultimoDia = formatter.parse("2018/12/31");
+			Date primerDia = formater.parse("2018/01/01");
+			Date ultimoDia = formater.parse("2018/12/31");
 
 			Comparendo actual = (Comparendo) colaPQ.delMax();
 
@@ -303,8 +295,8 @@ public class Modelo {
 			Date fechaComp = actual.convertirFechaStringADate();
 
 			while(fechaSiguiente.compareTo(ultimoDia) < 0){
-				String fecha1 = formatter.format(fechaActual);
-				String fecha2 = formatter.format(fechaSiguiente);
+				String fecha1 = formater.format(fechaActual);
+				String fecha2 = formater.format(fechaSiguiente);
 				int contador = 0;
 				while(fechaComp.compareTo(fechaSiguiente) < 0 && !colaPQ.isEmpty()){
 					contador++;
@@ -478,7 +470,6 @@ public class Modelo {
 			e.printStackTrace();
 		}
 	}
-
 
 	//clases del Json para cargar
 

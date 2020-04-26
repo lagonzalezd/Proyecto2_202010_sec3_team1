@@ -2,19 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d92bd22-4991-49ec-ae32-139cc0e31a9b" name="Default Changelist" comment="K">
-      <change afterPath="$PROJECT_DIR$/src/model/data_structures/LinkedListBase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/data_structures/Comparendo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/data_structures/Comparendo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/data_structures/MaxCola.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/data_structures/MaxCola.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/data_structures/compararDistancia.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto2_202010.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto2_202010.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/logic/Modelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/logic/Modelo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/View.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="Proyecto2_202010" />
@@ -23,6 +21,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -40,11 +39,30 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="create.test.in.the.same.root" value="true" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/test/model/data_structures" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../gson-2.8.6.jar!/" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="model.data_structures" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
@@ -69,6 +87,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="455" y="136" width="1000" height="839" key="#Project_Structure" timestamp="1587868586012">
+      <screen x="0" y="34" width="1920" height="1046" />
+    </state>
+    <state x="455" y="136" width="1000" height="839" key="#Project_Structure/0.34.1920.1046@0.34.1920.1046" timestamp="1587868586012" />
     <state x="414" y="207" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587749329168">
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
@@ -77,10 +99,18 @@
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
     <state x="721" y="188" width="468" height="735" key="#com.intellij.ide.util.MemberChooser/0.34.1920.1046@0.34.1920.1046" timestamp="1587847723942" />
+    <state x="623" y="281" width="655" height="548" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1587870698672">
+      <screen x="0" y="34" width="1920" height="1046" />
+    </state>
+    <state x="623" y="281" width="655" height="548" key="#com.intellij.ide.util.PackageChooserDialog/0.34.1920.1046@0.34.1920.1046" timestamp="1587870698672" />
     <state x="627" y="301" width="656" height="510" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1587749328522">
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
     <state x="627" y="301" width="656" height="510" key="#com.intellij.ide.util.TreeClassChooserDialog/0.34.1920.1046@0.34.1920.1046" timestamp="1587749328522" />
+    <state x="667" y="423" width="585" height="343" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1587868627900">
+      <screen x="0" y="34" width="1920" height="1046" />
+    </state>
+    <state x="667" y="423" width="585" height="343" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.34.1920.1046@0.34.1920.1046" timestamp="1587868627900" />
     <state x="0" y="34" width="1910" height="1046" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1585793395915">
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
@@ -117,9 +147,25 @@
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
     <state x="315" y="34" width="1280" height="1046" key="SettingsEditor/0.34.1920.1046@0.34.1920.1046" timestamp="1587856460607" />
+    <state x="684" y="323" width="542" height="465" key="chooseDestDirectoryDialog" timestamp="1587870785384">
+      <screen x="0" y="34" width="1920" height="1046" />
+    </state>
+    <state x="684" y="323" width="542" height="465" key="chooseDestDirectoryDialog/0.34.1920.1046@0.34.1920.1046" timestamp="1587870785384" />
     <state x="540" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1587747608983">
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
     <state x="540" y="345" key="com.intellij.ide.util.TipDialog/0.34.1920.1046@0.34.1920.1046" timestamp="1587747608983" />
+    <state x="560" y="433" width="779" height="265" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1587868661220">
+      <screen x="0" y="34" width="1920" height="1046" />
+    </state>
+    <state x="560" y="433" width="779" height="265" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.34.1920.1046@0.34.1920.1046" timestamp="1587868661220" />
+    <state x="668" y="213" width="574" height="685" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1587870785397">
+      <screen x="0" y="34" width="1920" height="1046" />
+    </state>
+    <state x="668" y="213" width="574" height="685" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.34.1920.1046@0.34.1920.1046" timestamp="1587870785397" />
+    <state x="528" y="235" width="864" height="642" key="find.popup" timestamp="1587868559625">
+      <screen x="0" y="34" width="1920" height="1046" />
+    </state>
+    <state x="528" y="235" width="864" height="642" key="find.popup/0.34.1920.1046@0.34.1920.1046" timestamp="1587868559625" />
   </component>
 </project>
